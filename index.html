@@ -1,5 +1,33 @@
 ---
 layout: default
 title: Homepage
+card:
+ - title: Coding <br> Challenge
+   category: HTML & CSS
+   cbackground: bg-yellow
+   https: img src="https://www.instituteofcode.com/assets/images/cutout-3.png"
+ - title: Instagram <br> Challenge 
+   category: social Foundations
+   cbackground: bg-blue
+   https: img src="https://www.instituteofcode.com/assets/images/cutout-2.png"
+ - title: Photography <br> Challenge
+   category: HTML & CSS   
+   cbackground: bg-red
+   https: img src="https://www.instituteofcode.com/assets/images/cutout-1.png"   
 ---
-<h1>Welcome to your homepage!</h1>
+
+<section class="padded grid-spaceBetween mob-padded-0">
+
+    {% for item in page.card %}
+        <div class="center">
+            <div class="col-3_xs-11 padded-05">
+                <div class="card {{item.cbackground}}">
+                    <h3> {{item.title}} <br>  </h3> 
+                    <h4> {{ item.category}} </h4> 
+                    <img {{item.https}}>
+                </div> 
+            </div> 
+        </div>    
+    {% endfor %}   
+
+</section>
